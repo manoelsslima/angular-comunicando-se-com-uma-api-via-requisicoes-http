@@ -23,8 +23,7 @@ import { PerfilContatoComponent } from '../perfil-contato/perfil-contato.compone
     FormsModule,
     SeparadorComponent,
     CommonModule,
-    RouterLink,
-    PerfilContatoComponent
+    RouterLink
   ],
   templateUrl: './lista-contatos.component.html',
   styleUrl: './lista-contatos.component.css'
