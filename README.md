@@ -1,8 +1,15 @@
 # angular-comunicando-se-com-uma-api-via-requisicoes-http
 
-Tela no [Figma](https://www.figma.com/design/1DnQL4ojGrPPXFtDQvcCoE/Angular--comunicando-se-com-uma-API-via-requisi%C3%A7%C3%B5es-HTTP-%7C-Indexa--Community-?m=auto&is-community-duplicate=1&fuid=949749399250438500)
+Faça download do [Projeto base](https://github.com/alura-cursos/3655-angular-indexa/tree/projeto-base)
 
-[Imagens do projeto](https://cdn3.gnarususercontent.com.br/3655-angular/Imagens.zip)
+Tela de referência da aplicação no [Figma](https://www.figma.com/design/1DnQL4ojGrPPXFtDQvcCoE/Angular--comunicando-se-com-uma-API-via-requisi%C3%A7%C3%B5es-HTTP-%7C-Indexa--Community-?m=auto&is-community-duplicate=1&fuid=949749399250438500)
+
+Baixe as [imagens do projeto](https://cdn3.gnarususercontent.com.br/3655-angular/Imagens.zip)
+
+Instale o `json-server`
+```bash
+$ npm i -g json-server@0.17.4
+```
 
 Arquivo `db.json`:
 ```json
@@ -30,5 +37,3 @@ Arquivo `db.json`:
 }
 
 ```
-
-[Projeto base](https://github.com/alura-cursos/3655-angular-indexa/tree/projeto-base)
