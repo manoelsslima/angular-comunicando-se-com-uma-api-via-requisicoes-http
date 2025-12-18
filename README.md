@@ -30,3 +30,5 @@ Arquivo `db.json`:
 }
 
 ```
+
+[Projeto base](https://github.com/alura-cursos/3655-angular-indexa/tree/projeto-base)
