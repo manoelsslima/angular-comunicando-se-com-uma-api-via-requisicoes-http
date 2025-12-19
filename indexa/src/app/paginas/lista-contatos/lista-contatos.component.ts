@@ -4,19 +4,15 @@ import { CabecalhoComponent } from '../../componentes/cabecalho/cabecalho.compon
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { ContatoComponent } from '../../componentes/contato/contato.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
-import { FormularioContatoComponent } from '../formulario-contato/formulario-contato.component';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ContatoService } from '../../services/contato.service';
 import { Contato } from '../../componentes/contato/contato';
-import { PerfilContatoComponent } from '../perfil-contato/perfil-contato.component';
 
 @Component({
   selector: 'app-lista-contatos',
   standalone: true,
   imports: [
-    FormularioContatoComponent,
-    ListaContatosComponent,
     ContainerComponent,
     ContatoComponent,
     CabecalhoComponent,
@@ -24,7 +20,7 @@ import { PerfilContatoComponent } from '../perfil-contato/perfil-contato.compone
     SeparadorComponent,
     CommonModule,
     RouterLink
-  ],
+],
   templateUrl: './lista-contatos.component.html',
   styleUrl: './lista-contatos.component.css'
 })
