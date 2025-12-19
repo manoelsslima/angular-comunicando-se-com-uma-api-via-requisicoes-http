@@ -3,26 +3,30 @@ import { Component, OnInit } from '@angular/core';
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { Contato } from '../../componentes/contato/contato';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { SeparadorComponent } from "../../componentes/separador/separador.component";
 
 @Component({
   selector: 'app-perfil-contato',
   standalone: true,
   imports: [
     ContainerComponent,
-    RouterLink
-  ],
+    RouterLink,
+    SeparadorComponent,
+    SeparadorComponent
+],
   templateUrl: './perfil-contato.component.html',
   styleUrl: './perfil-contato.component.css'
 })
 export class PerfilContatoComponent implements OnInit {
 
   contato: Contato = {
-    id: 1,
-    nome: 'Manoel',
-    telefone: '11999999999',
-    email: 'manoel@email.com',
-    aniversario: '01/01/1990',
-    redes: 'dev.com'
+    id: 0,
+    nome: '',
+    avatar: '',
+    telefone: '',
+    email: '',
+    aniversario: '',
+    redes: ''
   }
 
   constructor(

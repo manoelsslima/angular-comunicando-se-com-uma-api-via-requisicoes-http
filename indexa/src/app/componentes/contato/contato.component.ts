@@ -12,5 +12,6 @@ export class ContatoComponent {
 
   @Input() id?: number;
   @Input() nome: string = '';
+  @Input() avatar: string | ArrayBuffer = '';
   @Input() telefone: string = '';
 }
