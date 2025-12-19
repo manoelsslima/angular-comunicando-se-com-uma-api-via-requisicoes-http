@@ -3,7 +3,7 @@ import { ContainerComponent } from '../../componentes/container/container.compon
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ContatoService } from '../../services/contato.service';
 
 @Component({
@@ -25,11 +25,13 @@ export class FormularioContatoComponent implements OnInit {
 
   constructor(
     private contatoService: ContatoService,
-    private router: Router
+    private router: Router,
+    private activatedRouter: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.inicializarFormulario();
+    this.carregarContato();
   }
 
   inicializarFormulario() {
@@ -43,9 +45,23 @@ export class FormularioContatoComponent implements OnInit {
     });
   }
 
+  carregarContato() {
+    const id = this.activatedRouter.snapshot.paramMap.get('id');
+    if (id) {
+      this.contatoService.buscarPorId(parseInt(id)).subscribe((contato) => {
+        // patchValue -> popula o formulário com o valor passado
+        this.contatoForm.patchValue(contato);
+      });
+    }
+  }
+
   salvarContato() {
     const novoContato = this.contatoForm.value;
-    this.contatoService.salvarContato(novoContato).subscribe(() => {
+    const id = this.activatedRouter.snapshot.paramMap.get('id');
+    // se o contato existir, converte para inteiro
+    novoContato.id = id ? parseInt(id) : null;
+
+    this.contatoService.editarOuSalvarContato(novoContato).subscribe(() => {
       this.contatoForm.reset();
       this.router.navigateByUrl('/lista-contatos');
     });

@@ -14,6 +14,9 @@ export const routes: Routes = [
         path: 'formulario', component: FormularioContatoComponent
     },
     {
+        path: 'formulario/:id', component: FormularioContatoComponent
+    },
+    {
         path: 'lista-contatos', component: ListaContatosComponent
     },
     {

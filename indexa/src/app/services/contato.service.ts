@@ -18,7 +18,7 @@ export class ContatoService {
     return this.http.get<Contato[]>(this.API);
   }
 
-  salvarContato(contato: Contato) {
+  private salvarContato(contato: Contato) {
     return this.http.post<Contato>(this.API, contato);
   }
 
@@ -30,6 +30,19 @@ export class ContatoService {
   excluirContato(id: number): Observable<Contato> {
     const url = `${this.API}/${id}`;
     return this.http.delete<Contato>(url);
+  }
+
+  private editarContato(contato: Contato): Observable<Contato> {
+    const url = `${this.API}/${contato.id}`;
+    return this.http.put<Contato>(url, contato);
+  }
+
+  editarOuSalvarContato(contato: Contato) {
+    if (contato.id) {
+      return this.editarContato(contato);
+    } else {
+      return this.salvarContato(contato);
+    }
   }
 
   

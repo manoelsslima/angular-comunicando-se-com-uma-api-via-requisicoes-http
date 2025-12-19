@@ -3,7 +3,7 @@
     <li><strong>{{ nome }}</strong></li>
     <li>{{ telefone }}</li>
     <li>
-      <button>
+      <button [routerLink]="['/formulario', id]">
         <img src="/assets/pencil-square.png" alt="Editar">
       </button>
       <button [routerLink]="['/perfil-contato', id]">
