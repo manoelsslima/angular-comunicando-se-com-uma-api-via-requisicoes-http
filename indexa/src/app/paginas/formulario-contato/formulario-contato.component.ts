@@ -68,7 +68,11 @@ export class FormularioContatoComponent implements OnInit {
   }
 
   cancelar() {
+    const id = this.activatedRouter.snapshot.paramMap.get('id');
     this.contatoForm.reset();
+    if (id) { // retorna pra lista caso desista de editar
+      this.router.navigateByUrl('/lista-contatos');
+    }
   }
 
 }
