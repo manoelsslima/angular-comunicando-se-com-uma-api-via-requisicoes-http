@@ -1,19 +1,10 @@
 <app-container>
-    <header>
-        <section class="cabecalho-link">
-            <img src="assets/logo.png" alt="">
-            <div>
-                <button>
-                    <img class="seta" src="assets/arrow-left.png" alt="">
-                    <a routerLink="/lista-contatos">Voltar</a>
-                </button>
-            </div>
-        </section>
-        <section class="cabecalho-contato">
-            <img src="assets/adicionar-contato.png" alt="">
-            <h1>Adicionar Contato</h1>
-        </section>
-    </header>
+    <app-cabecalho
+        [titulo]="'Adicionar Contato'"
+        [bannerSrc]="'assets/adicionar-contato.png'"
+        [telaInicial]="false">
+    </app-cabecalho>
+
     <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
         <div role="button" class="imagem-contato">
             <i class="material-icons">add</i>

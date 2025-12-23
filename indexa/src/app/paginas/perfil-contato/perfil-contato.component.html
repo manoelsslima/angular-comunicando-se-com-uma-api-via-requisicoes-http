@@ -1,19 +1,10 @@
 <app-container>
-    <header>
-        <section class="cabecalho-link">
-            <img src="assets/logo.png" alt="">
-            <div>
-                <button>
-                    <img class="seta" src="assets/arrow-left.png" alt="">
-                    <a routerLink="/lista-contatos">Voltar</a>
-                </button>
-            </div>
-        </section>
-        <section class="cabecalho-contato">
-            <img src="assets/perfil-contato.png" alt="">
-            <h1>Perfil do Contato</h1>
-        </section>
-    </header>
+    <app-cabecalho
+    [titulo]="'Perfil do Contato'"
+    [bannerSrc]="'assets/perfil-contato.png'"
+    [telaInicial]="false">
+    </app-cabecalho>
+
     <section class="perfil">
         <div class="imagem-perfil">
             <img [src]="contato.avatar" alt="Avatar do contato">
@@ -48,7 +39,8 @@
             <button (click)="excluirContato()" class="botao-excluir">
                 Excluir Contato
             </button>
-            <button class="botao-editar">
+            <button class="botao-editar"
+                [routerLink]="['/formulario', contato.id]">
                 Editar
             </button>
         </div>
