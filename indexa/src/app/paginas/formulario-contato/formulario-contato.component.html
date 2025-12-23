@@ -32,15 +32,15 @@
         }
         <label for="nome">Nome</label>
         <input type="text" formControlName="nome" id="nome" name="nome" placeholder="Digite o nome do contato">
-        <app-mensagem-erro [control]="obterControle('nome')">
+        <app-mensagem-erro [control]="obterControle('nome')" />
         
         <label for="telefone">Telefone</label>
         <input type="tel" formControlName="telefone" id="telefone" name="telefone" placeholder="Digite o telefone do contato">
-        <app-mensagem-erro [control]="obterControle('telefone')">
+        <app-mensagem-erro [control]="obterControle('telefone')" />
         
         <label for="email">E-mail</label>
         <input type="email" formControlName="email" id="email" name="email" placeholder="Digite o e-mail do contato">
-        <app-mensagem-erro [control]="obterControle('email')">
+        <app-mensagem-erro [control]="obterControle('email')" />
         
         <app-separador></app-separador>
 
