@@ -32,32 +32,15 @@
         }
         <label for="nome">Nome</label>
         <input type="text" formControlName="nome" id="nome" name="nome" placeholder="Digite o nome do contato">
-        @if(contatoForm.get('nome')?.errors && contatoForm.get('nome')?.touched) {
-            <div class="mensagem-erro">
-                Campo obrigatório
-            </div>
-        }
+        <app-mensagem-erro [control]="obterControle('nome')">
         
         <label for="telefone">Telefone</label>
         <input type="tel" formControlName="telefone" id="telefone" name="telefone" placeholder="Digite o telefone do contato">
-        @if(contatoForm.get('telefone')?.errors && contatoForm.get('telefone')?.touched) {
-            <div class="mensagem-erro">
-                Campo obrigatório
-            </div>
-        }
+        <app-mensagem-erro [control]="obterControle('telefone')">
         
         <label for="email">E-mail</label>
         <input type="email" formControlName="email" id="email" name="email" placeholder="Digite o e-mail do contato">
-        @if(contatoForm.get('email')?.errors?.['required'] && contatoForm.get('email')?.touched) {
-            <div class="mensagem-erro">
-                Campo obrigatório
-            </div>
-        }
-        @if(contatoForm.get('email')?.errors?.['email'] && contatoForm.get('email')?.touched) {
-            <div class="mensagem-erro">
-                E-mail inválido
-            </div>
-        }
+        <app-mensagem-erro [control]="obterControle('email')">
         
         <app-separador></app-separador>
 
